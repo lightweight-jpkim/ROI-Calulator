@@ -211,6 +211,24 @@
             border-radius: 12px;
             padding: 20px;
             border: 1px solid #e9ecef;
+            position: relative;
+            height: 300px; /* 고정 높이 설정 */
+        }
+        
+        .chart-item canvas {
+            max-width: 100% !important;
+            max-height: 250px !important;
+            width: 100% !important;
+            height: 250px !important;
+        }
+        
+        .chart-container .chart-item:last-child {
+            height: 400px; /* 누적 차트는 더 크게 */
+        }
+        
+        .chart-container .chart-item:last-child canvas {
+            max-height: 350px !important;
+            height: 350px !important;
         }
         
         .chart-title {
@@ -558,7 +576,8 @@
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: false,
+                    maintainAspectRatio: true,
+                    aspectRatio: 2,
                     plugins: {
                         legend: { display: false }
                     },
@@ -598,7 +617,8 @@
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: false,
+                    maintainAspectRatio: true,
+                    aspectRatio: 2,
                     plugins: {
                         legend: { display: false }
                     },
@@ -638,7 +658,8 @@
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: false,
+                    maintainAspectRatio: true,
+                    aspectRatio: 2.5,
                     plugins: {
                         legend: { display: false }
                     },
